@@ -42,7 +42,7 @@
         {
             "name": "jenkins-volume",
             "host": {
-                "sourcePath": "/jenkins"
+                "sourcePath": "/efs/jenkins"
             }
         }
     ],
