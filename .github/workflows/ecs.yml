@@ -35,7 +35,7 @@ env:
   ECR_REPOSITORY: jenkins-ecs           
   ECS_SERVICE: jenkins-svc                 
   ECS_CLUSTER: jenkinsAppCluster                 
-  ECS_TASK_DEFINITION: jenkinsCluster-task
+  ECS_TASK_DEFINITION: ecs-task-definition.json
                                                
   CONTAINER_NAME: jenkins          
                                                
