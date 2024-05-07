@@ -3,7 +3,7 @@
     "containerDefinitions": [
         {
             "name": "jenkins",
-            "image": "jenkins/jenkins:lts",
+            "image": "jenkins/jenkins:latest",
             "cpu": 0,
             "portMappings": [
                 {
