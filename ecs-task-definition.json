@@ -16,7 +16,13 @@
             ],
             "essential": true,
             "environment": [],
-            "mountPoints": [],
+            "mountPoints": [
+                {
+                    "sourceVolume": "jenkins-volume",
+                    "containerPath": "/var/jenkins_home",
+                    "readOnly": false
+                }
+            ],
             "volumesFrom": [],
             "logConfiguration": {
                 "logDriver": "awslogs",
