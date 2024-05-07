@@ -1,2 +1,2 @@
 # Use the official Jenkins LTS image as a parent image
-FROM jenkins/jenkins:2.235.5
+FROM jenkins/jenkins:2.457
