@@ -1,9 +1,9 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:ap-south-1:819821926402:task-definition/jenkinsCluster-task:4",
+    "family": "jenkinsCluster-task",
     "containerDefinitions": [
         {
             "name": "jenkins",
-            "image": "819821926402.dkr.ecr.ap-south-1.amazonaws.com/jenkins-ecs:a940efdce5351ece2c1a73039aa522540e347ade",
+            "image": "819821926402.dkr.ecr.ap-south-1.amazonaws.com/jenkins-ecs:93b8991fc843f171692a0430869fd19eb6f403c1",
             "cpu": 0,
             "portMappings": [
                 {
@@ -31,17 +31,13 @@
                     "awslogs-group": "/ecs/jenkinsCluster-task",
                     "awslogs-region": "ap-south-1",
                     "awslogs-stream-prefix": "ecs"
-                },
-                "secretOptions": []
+                }
             },
             "systemControls": []
         }
     ],
-    "family": "jenkinsCluster-task",
     "taskRoleArn": "arn:aws:iam::819821926402:role/ecsTaskExecutionRole",
     "executionRoleArn": "arn:aws:iam::819821926402:role/ecsTaskExecutionRole",
-    "networkMode": "awsvpc",
-    "revision": 4,
     "volumes": [
         {
             "name": "jenkins-volume",
@@ -49,40 +45,6 @@
                 "sourcePath": "/jenkins"
             }
         }
-    ],
-    "status": "ACTIVE",
-    "requiresAttributes": [
-        {
-            "name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
-        },
-        {
-            "name": "ecs.capability.execution-role-awslogs"
-        },
-        {
-            "name": "com.amazonaws.ecs.capability.ecr-auth"
-        },
-        {
-            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
-        },
-        {
-            "name": "com.amazonaws.ecs.capability.task-iam-role"
-        },
-        {
-            "name": "ecs.capability.execution-role-ecr-pull"
-        },
-        {
-            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
-        },
-        {
-            "name": "ecs.capability.task-eni"
-        },
-        {
-            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.29"
-        }
-    ],
-    "placementConstraints": [],
-    "compatibilities": [
-        "EC2"
     ],
     "requiresCompatibilities": [
         "EC2"
@@ -92,8 +54,5 @@
     "runtimePlatform": {
         "cpuArchitecture": "X86_64",
         "operatingSystemFamily": "LINUX"
-    },
-    "registeredAt": "2024-05-07T13:12:34.413Z",
-    "registeredBy": "arn:aws:iam::819821926402:root",
-    "tags": []
+    }
 }
