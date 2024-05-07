@@ -1,19 +1,67 @@
 {
-  "family": "jenkins",
-  "containerDefinitions": [
-    {
-      "name": "jenkins",
-      "image": "819821926402.dkr.ecr.ap-south-1.amazonaws.com/jenkins-ecs:latest",
-      "essential": true,
-      "memory": 1024,
-      "cpu": 512,
-      "portMappings": [
+    "taskDefinitionArn": "arn:aws:ecs:ap-south-1:819821926402:task-definition/jenkinsCluster-task:1",
+    "containerDefinitions": [
         {
-          "containerPort": 8080,
-          "hostPort": 8080
+            "name": "jenkins",
+            "image": "jenkins/jenkins:latest",
+            "cpu": 0,
+            "portMappings": [
+                {
+                    "name": "jenkins-8080-tcp",
+                    "containerPort": 8080,
+                    "hostPort": 8080,
+                    "protocol": "tcp",
+                    "appProtocol": "http"
+                }
+            ],
+            "essential": true,
+            "environment": [],
+            "environmentFiles": [],
+            "mountPoints": [],
+            "volumesFrom": [],
+            "ulimits": [],
+            "systemControls": []
         }
-      ]
-    }
-  ]
+    ],
+    "family": "jenkinsCluster-task",
+    "taskRoleArn": "arn:aws:iam::819821926402:role/ecsTaskExecutionRole",
+    "executionRoleArn": "arn:aws:iam::819821926402:role/ecsTaskExecutionRole",
+    "networkMode": "awsvpc",
+    "revision": 1,
+    "volumes": [
+        {
+            "name": "jenkins-volume",
+            "host": {
+                "sourcePath": "/jenkins"
+            }
+        }
+    ],
+    "status": "ACTIVE",
+    "requiresAttributes": [
+        {
+            "name": "com.amazonaws.ecs.capability.task-iam-role"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
+        },
+        {
+            "name": "ecs.capability.task-eni"
+        }
+    ],
+    "placementConstraints": [],
+    "compatibilities": [
+        "EC2"
+    ],
+    "requiresCompatibilities": [
+        "EC2"
+    ],
+    "cpu": "512",
+    "memory": "256",
+    "runtimePlatform": {
+        "cpuArchitecture": "X86_64",
+        "operatingSystemFamily": "LINUX"
+    },
+    "registeredAt": "2024-05-06T15:50:53.137Z",
+    "registeredBy": "arn:aws:iam::819821926402:root",
+    "tags": []
 }
-
