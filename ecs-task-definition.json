@@ -1,0 +1,19 @@
+{
+  "family": "jenkins",
+  "containerDefinitions": [
+    {
+      "name": "jenkins",
+      "image": "819821926402.dkr.ecr.ap-south-1.amazonaws.com/jenkins-ecs:latest",
+      "essential": true,
+      "memory": 1024,
+      "cpu": 512,
+      "portMappings": [
+        {
+          "containerPort": 8080,
+          "hostPort": 8080
+        }
+      ]
+    }
+  ]
+}
+
